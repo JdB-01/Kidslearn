@@ -1,0 +1,62 @@
+
+<div class="milestone-badges-container">
+      <!-- Header Section -->
+      <div class="header-section">
+        <h2 class="page-title">Your Achievements</h2>
+        
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button 
+            *ngFor="let tab of filterTabs" 
+            [class]="'filter-tab ' + (activeFilter === tab.key ? 'active' : '')"
+            (click)="setActiveFilter(tab.key)">
+            {{ tab.label }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Badges Grid -->
+      <div class="badges-grid">
+        <div 
+          *ngFor="let badge of getFilteredBadges()" 
+          class="badge-card"
+          [class.completed]="badge.isCompleted">
+          
+          <!-- Badge Icon Container -->
+          <div class="badge-icon-container" [style.background-color]="badge.color">
+            <div class="badge-icon">
+              <i [class]="badge.icon"></i>
+            </div>
+            
+            <!-- Completion Checkmark -->
+            <div class="completion-check" *ngIf="badge.isCompleted">
+              <i class="fas fa-check"></i>
+            </div>
+            
+            <!-- Progress Indicator for incomplete badges -->
+            <div class="progress-indicator" *ngIf="!badge.isCompleted && badge.progress">
+              {{ badge.progress.current }}
+            </div>
+          </div>
+
+          <!-- Badge Info -->
+          <div class="badge-info">
+            <h3 class="badge-title">{{ badge.title }}</h3>
+            <p class="badge-description">{{ badge.description }}</p>
+            
+            <!-- Progress Bar -->
+            <div class="progress-section" *ngIf="badge.progress">
+              <div class="progress-bar">
+                <div 
+                  class="progress-fill" 
+                  [style.width.%]="(badge.progress.current / badge.progress.total) * 100">
+                </div>
+              </div>
+              <span class="progress-text">
+                {{ badge.progress.current }}/{{ badge.progress.total }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

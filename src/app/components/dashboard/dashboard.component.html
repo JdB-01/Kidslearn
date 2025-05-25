@@ -1,0 +1,84 @@
+<!-- dashboard.component.html -->
+<div class="dashboard">
+  <aside class="sidebar">
+    <h2>GAMIEY</h2>
+    <ul>
+      <li>Dashboard</li>
+      <li><button class="logout-button" routerLink="/game/bill-identification">Games</button></li>
+      <li>Quizzes</li>
+      <li><button class="logout-button" routerLink="/rewards">Rewards</button></li>
+      <li>My Savings</li>
+      <li>Settings</li>
+      <li><button class="logout-button" routerLink="/login">Logout</button></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="header">
+      <div class="user-info">
+        <div class="user-avatar"></div>
+        <span class="user-name">{{ userName }}</span>
+      </div>
+      <div class="points">
+        💰 {{ points }} Points
+      </div>
+    </div>
+
+    <section class="welcome">
+      <h3>Hello, {{ userName }}!</h3>
+      <p>Ready to learn and earn some points today?</p>
+    </section>
+
+    <section class="actions">
+      <div class="action-card">
+        <div class="card-icon">🎮</div>
+        <h4>Educational Games</h4>
+        <p>Play fun games and learn about money at the same time!</p>
+        <button routerLink="/game/bill-identification">Play Now</button>
+      </div>
+      <div class="action-card">
+        <div class="card-icon">📝</div>
+        <h4>Take a Quiz</h4>
+        <p>Test your knowledge and earn extra points!</p>
+        <button>Start Quiz</button>
+      </div>
+      <div class="action-card">
+        <div class="card-icon">🎁</div>
+        <h4>Your Rewards</h4>
+        <p>Redeem your points for awesome prizes!</p>
+        <button routerLink="/rewards">View Rewards</button>
+      </div>
+    </section>
+
+    <section class="progress-section">
+      <h4>Your Progress</h4>
+      <div class="progress-item">
+        <div class="progress-header">
+          <span class="progress-label">Financial Basics</span>
+          <span class="progress-percentage">{{ progress.financialBasics }}%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progress.financialBasics"></div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-header">
+          <span class="progress-label">Smart Spending</span>
+          <span class="progress-percentage">{{ progress.smartSpending }}%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progress.smartSpending"></div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-header">
+          <span class="progress-label">Saving Skills</span>
+          <span class="progress-percentage">{{ progress.savingSkills }}%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progress.savingSkills"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

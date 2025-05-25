@@ -1,0 +1,41 @@
+
+
+<div class="rewards-container">
+  <!-- Header -->
+  <div class="header">
+    <h1 class="title">GAMIEY Rewards</h1>
+    <div class="points-display">
+      <span class="coin-icon">🪙</span>
+      <span class="points-text">{{ userPoints }} Points</span>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="nav-tabs">
+    <button 
+      class="nav-tab" 
+      [class.active]="activeTab === 'shop'"
+      (click)="setActiveTab('shop')">
+      🛍️ Reward Shop
+    </button>
+    <button 
+      class="nav-tab" 
+      [class.active]="activeTab === 'badges'"
+      (click)="setActiveTab('badges')">
+      🏆 Milestone Badges
+    </button>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content-section">
+    <app-gamiey-rewards
+      *ngIf="activeTab === 'shop'"
+      [userPoints]="userPoints">
+    </app-gamiey-rewards>
+    
+    <app-milestones 
+      *ngIf="activeTab === 'badges'"
+      [userPoints]="userPoints">
+    </app-milestones>
+  </div>
+</div>

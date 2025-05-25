@@ -1,0 +1,41 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="avatar">
+      <div class="avatar-icon">😊</div>
+    </div>
+    
+    <h1 class="welcome-title">Welcome Back!</h1>
+    
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">USERNAME</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="username"
+          name="username"
+          placeholder="Username"
+          required
+        >
+      </div>
+      
+      <div class="form-group">
+        <label for="password">PASSWORD</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Password"
+          required
+        >
+      </div>
+      
+      <div class="forgot-password">
+        <a href="#" (click)="onForgotPassword($event)">Forgot Password? Click here</a>
+      </div>
+      
+      <button type="submit" class="login-button">LOGIN</button>
+    </form>
+  </div>
+</div>
