@@ -6,7 +6,8 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: `
+
+    template: `
     <!-- Simple clean layout - let each component handle its own styling -->
     <router-outlet></router-outlet>
   `,
@@ -23,3 +24,21 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'kids-finance-app';
 }
+//     template: `
+//     <div class="app-layout">
+//             <main class="main-content">
+//         <router-outlet></router-outlet>
+//       </main>
+//     </div>
+//   `,
+//   styles: [`
+//     .app-layout {
+//       display: flex;
+//       height: 100vh;
+//     }
+//     .main-content {
+//       flex: 1;
+//       overflow-y: auto;
+//     }
+//   `]
+// })

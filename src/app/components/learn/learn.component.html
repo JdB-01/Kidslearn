@@ -1,0 +1,111 @@
+<div class="learn-container">
+  <!-- Header Section -->
+    <header class="header-container">
+      <div class="header-content">
+        <h1 class="learning-path-title">Learning Path</h1>
+        <div class="points-badge">
+          <span class="trophy-icon">🏆</span>
+          <span class="points-text">1,000 Points</span>
+        </div>
+      </div>
+      <div class="header-border"></div>
+    </header>
+
+  <!-- Welcome Message -->
+  <div class="welcome-section">
+    <h2>Welcome {{ userName }}!</h2>
+    <p>Learn how to be smart with money and become a finance superhero!</p>
+    <div class="achievement-badges">
+      <span class="badge">🎯 Goal Setter</span>
+      <span class="badge">💡 Smart Saver</span>
+      <span class="badge">📈 Progress Tracker</span>
+    </div>
+  </div>
+
+  <!-- Learning Modules Grid -->
+  <div class="modules-section">
+    <h3>Financial Learning Modules</h3>
+    <div class="modules-grid">
+      <div *ngFor="let module of learningModules" 
+           class="module-card" 
+           [class]="'module-' + module.color"
+           [class.completed]="module.completed">
+        
+        <!-- Module Header -->
+        <div class="module-header">
+          <div class="module-icon">{{ module.icon }}</div>
+          <div class="module-info">
+            <h4>{{ module.title }}</h4>
+            <span class="lesson-count">{{ module.totalLessons }} Lessons</span>
+          </div>
+          <div class="completion-badge" *ngIf="module.completed">
+            <span class="check-icon">✓</span>
+          </div>
+        </div>
+
+        <!-- Module Description -->
+        <div class="module-description">
+          <p>{{ module.description }}</p>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="module-progress">
+          <div class="progress-info">
+            <span class="progress-text">
+              {{ module.progress }} of {{ module.totalLessons }} lessons completed
+            </span>
+            <span class="progress-percentage">
+              {{ getProgressPercentage(module.progress, module.totalLessons) }}%
+            </span>
+          </div>
+          
+          <div class="progress-bar">
+            <div class="progress-fill" 
+                 [style.width.%]="getProgressPercentage(module.progress, module.totalLessons)"
+                 [class.completed]="module.completed">
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="module-actions">
+          <button *ngIf="module.progress === 0" 
+                  class="action-btn start-btn"
+                  (click)="startModule(module.id)">
+            <span class="btn-icon">🚀</span>
+            Start Module
+          </button>
+          
+          <button *ngIf="module.progress > 0 && !module.completed" 
+                  class="action-btn continue-btn"
+                  (click)="continueModule(module.id)">
+            <span class="btn-icon">▶️</span>
+            Continue Learning
+          </button>
+          
+          <button *ngIf="module.completed" 
+                  class="action-btn completed-btn"
+                  (click)="startModule(module.id)">
+            <span class="btn-icon">🏆</span>
+            Review Module
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievement Section -->
+  <div class="achievement-section">
+    <div class="achievement-card">
+      <div class="achievement-content">
+        <h3>🎯 Ready to Level Up?</h3>
+        <p>Complete the "Banking Basics" module to earn 500 bonus coins and unlock the Money Master badge!</p>
+        <div class="achievement-rewards">
+          <span class="reward-item">🪙 +500 Coins</span>
+          <span class="reward-item">🏅 Money Master Badge</span>
+          <span class="reward-item">🔓 Advanced Modules</span>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
