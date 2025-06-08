@@ -21,8 +21,8 @@ export const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'learn', component: LearnComponent },
       { path: 'games', component: BillIdentificationGameComponent },
-  
-      { path: 'rewards', component: RewardsComponent },
+      { path: 'rewards', component: RewardspageComponent },
+      
        ]
   },
   
