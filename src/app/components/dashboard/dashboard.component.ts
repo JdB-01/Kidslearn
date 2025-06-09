@@ -15,11 +15,11 @@ export class DashboardComponent implements OnInit {
   userName = '';
   coins = 1800;
   
-  hallOfFameItems = [
-    { type: 'Super Day', color: '#FFD700', icon: '⭐' },
-    { type: 'Super Day', color: '#E6E6FA', icon: '⭐' },
-    { type: 'Super Day', color: '#FFB6C1', icon: '⭐' }
-  ];
+hallOfFameItems = [
+  { type: 'Super Day', color: '#FFD700', icon: '🥇' }, // Gold medal emoji
+  { type: 'Super Day', color: '#C0C0C0', icon: '🥈' }, // Silver medal emoji
+  { type: 'Super Day', color: '#CD7F32', icon: '🥉' }  // Bronze medal emoji
+];
 
   progressItems = [
     { subject: 'Financial Basics', progress: 95, color: '#FF6B35' },

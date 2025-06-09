@@ -1,0 +1,53 @@
+<div class="savings-container">
+  <!-- Header with points -->
+  <div class="header">
+    <h1 class="title">My Savings</h1>
+    <div class="points-badge">
+      <span class="points-icon"><i class="fas fa-coins"></i></span>
+      <span class="points-text">{{ points }} Points</span>
+    </div>
+  </div>
+
+  <!-- Main content area -->
+  <div class="main-content">
+    
+    <!-- Add Money Button -->
+    <div class="add-money-section">
+      <button class="add-money-btn" (click)="addMoneyToSavings()">
+        Add Money To Savings
+      </button>
+    </div>
+
+    <!-- Savings Summary Cards -->
+    <div class="savings-cards">
+      
+      <!-- Weekly Goal Card -->
+      <div class="savings-card">
+        <h3 class="card-title">Weekly Goal</h3>
+        <div class="amount">₦{{ weeklyGoal.toLocaleString() }}</div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="progressPercentage"></div>
+          </div>
+          <div class="progress-text">{{ progressPercentage.toFixed(0) }}% Complete</div>
+        </div>
+      </div>
+
+      <!-- Saved This Week Card -->
+      <div class="savings-card saved-card">
+        <h3 class="card-title">Saved this week</h3>
+        <div class="amount highlight">₦{{ savedThisWeek.toLocaleString() }}</div>
+        
+        <!-- Achievement indicator -->
+        <div class="achievement" *ngIf="savedThisWeek >= weeklyGoal">
+          <span class="achievement-icon">🎉</span>
+          <span class="achievement-text">Goal Achieved!</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

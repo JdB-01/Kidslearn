@@ -1,21 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-
-// export class UserService {
-//   private _username: string = '';
-
-//   setUsername(username: string): void {
-//     this._username = username;
-//   }
-
-//   getUsername(): string {
-//     return this._username;
-//   }
-// }
-
 
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';

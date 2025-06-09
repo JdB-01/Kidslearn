@@ -1,0 +1,273 @@
+/* leaderboard.component.css */
+.leaderboard-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.top-header {
+  display: flex;
+  justify-content: flex-end;
+  margin: -20px -20px 20px 0;
+  padding: 15px 20px;
+  background: #ff6b35;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.smiley-icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.smiley-icon::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #5a9fd4;
+  left: 6px;
+  z-index: 1;
+}
+
+.smiley-icon::after {
+  content: '😊';
+  position: absolute;
+  font-size: 24px;
+  left: 0;
+  z-index: 2;
+}
+
+.user-name {
+  font-weight: 500;
+  color: white;
+  font-size: 16px;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background: #ff6b35;
+  color: white;
+  border-color: #ff6b35;
+}
+
+.filter-btn:hover:not(.active) {
+  background: #f5f5f5;
+}
+
+.leaderboard-table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 120px 120px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row.rank-1 {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3cc 100%);
+}
+
+.table-row.rank-2 {
+  background: linear-gradient(135deg, #f0e6ff 0%, #e6ccff 100%);
+}
+
+.table-row.rank-3 {
+  background: linear-gradient(135deg, #ffe6e6 0%, #ffcccc 100%);
+}
+
+.rank-cell {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.player-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ff6b35;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.player-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.point-cell {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.badges-cell {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.pagination-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-btn {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #f5f5f5;
+}
+
+.pagination-btn:disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.next-btn {
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .search-container {
+    max-width: none;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 60px 1fr 80px 80px;
+    padding: 12px 15px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

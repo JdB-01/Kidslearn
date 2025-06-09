@@ -7,6 +7,8 @@ import { RewardspageComponent } from './components/rewardspage/rewardspage.compo
 import { RewardsComponent } from './components/rewards/rewards.component';
 import { LearnComponent } from './components/learn/learn.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
+import { SavingsComponent } from './components/savings/savings.component';
 
 export const routes: Routes = [
   // Login route (no sidebar)
@@ -22,6 +24,8 @@ export const routes: Routes = [
       { path: 'learn', component: LearnComponent },
       { path: 'games', component: BillIdentificationGameComponent },
       { path: 'rewards', component: RewardspageComponent },
+      { path: 'leaderboard', component: LeaderboardComponent},
+      { path: 'savings', component: SavingsComponent}
       
        ]
   },

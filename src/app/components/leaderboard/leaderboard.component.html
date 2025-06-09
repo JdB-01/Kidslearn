@@ -1,0 +1,93 @@
+<!-- leaderboard.component.html -->
+<div class="leaderboard-container">
+  <!-- Top Header with User Info -->
+  <div class="top-header">
+    <div class="user-profile">
+      <div class="smiley-icon">😊</div>
+      <span class="user-name">{{userName}}</span>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <div class="header-section">
+    <div class="search-container">
+      <input 
+        type="text" 
+        placeholder="Search" 
+        class="search-input"
+        [(ngModel)]="searchTerm"
+      >
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+    </div>
+    
+    <div class="filter-buttons">
+      <button 
+        class="filter-btn"
+        [class.active]="selectedPeriod === 'May'"
+        (click)="selectPeriod('May')"
+      >
+        May ▼
+      </button>
+      <button 
+        class="filter-btn"
+        [class.active]="selectedPeriod === 'Week'"
+        (click)="selectPeriod('Week')"
+      >
+        Week ▼
+      </button>
+      <button 
+        class="filter-btn"
+        [class.active]="selectedPeriod === 'Today'"
+        (click)="selectPeriod('Today')"
+      >
+        Today
+      </button>
+      <button 
+        class="filter-btn"
+        [class.active]="selectedPeriod === '2025'"
+        (click)="selectPeriod('2025')"
+      >
+        2025
+      </button>
+    </div>
+  </div>
+
+  <!-- Leaderboard Table -->
+  <div class="leaderboard-table">
+    <!-- Table Header -->
+    <div class="table-header">
+      <div class="rank-col">Rank</div>
+      <div class="player-col">Player</div>
+      <div class="point-col">Point</div>
+      <div class="badges-col">Badges</div>
+    </div>
+
+    <!-- Table Rows -->
+    <div 
+      class="table-row" 
+      *ngFor="let entry of leaderboardData; let i = index"
+      [ngClass]="getRowClass(entry.rank)"
+    >
+      <div class="rank-cell">{{ entry.rank }}</div>
+      <div class="player-cell">
+        <div class="player-avatar">{{ entry.avatar }}</div>
+        <span class="player-name">{{ entry.player }}</span>
+      </div>
+      <div class="point-cell">{{ entry.points }}</div>
+      <div class="badges-cell">{{ entry.badges }}</div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <span class="pagination-info">Showing 1 - 9 of 9 entries</span>
+    <div class="pagination-controls">
+      <button class="pagination-btn" [disabled]="currentPage === 1">1</button>
+      <button class="pagination-btn">2</button>
+      <button class="pagination-btn next-btn">›</button>
+    </div>
+  </div>
+</div>

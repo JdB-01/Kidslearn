@@ -34,62 +34,53 @@ export class MilestonesComponent {
     { key: 'games', label: 'Games' }
   ];
 
-  badges: Badge[] = [
-    {
-      id: 'super-saver',
-      title: 'Super Saver',
-      description: 'Saved N$500 in your account',
-      icon: 'fas fa-puzzle-piece',
-      isCompleted: true,
-      color: '#6c7b95',
-      progress: undefined
-    },
-    {
-      id: 'quick-learner',
-      title: 'Quick Learner',
-      description: 'Completed 5 lessons in one day',
-      icon: 'fas fa-puzzle-piece',
-      isCompleted: true,
-      color: '#b8c17a',
-      progress: undefined
-    },
-    {
-      id: 'first-win',
-      title: 'First Win',
-      description: 'Complete your first win',
-      icon: 'fas fa-trophy',
-      isCompleted: true,
-      color: '#cd7f7f',
-      progress: undefined
-    },
-    {
-      id: 'money-whizz',
-      title: 'Money Whizz',
-      description: 'Complete 10 quizzes',
-      icon: 'fas fa-puzzle-piece',
-      isCompleted: false,
-      color: '#c4965a',
-      progress: { current: 8, total: 10 }
-    },
-    {
-      id: 'game-champion',
-      title: 'Game Champion',
-      description: 'Win 5 games in a row',
-      icon: 'fas fa-comments',
-      isCompleted: false,
-      color: '#d47f7f',
-      progress: { current: 1, total: 5 }
-    },
-    {
-      id: 'weekly-saver',
-      title: 'Weekly Saver',
-      description: 'Save money for 4 weeks straight',
-      icon: 'fas fa-puzzle-piece',
-      isCompleted: false,
-      color: '#6c7bc4',
-      progress: { current: 2, total: 4 }
-    }
-  ];
+badges: Badge[] = [
+  {
+    id: 'super-saver',
+    title: 'Super Saver',
+    description: 'Saved N$500 in your account',
+    icon: 'fas fa-piggy-bank',  // Changed from fa-puzzle-piece
+    isCompleted: true,
+    color: '#6c7b95',
+    progress: undefined
+  },
+  {
+    id: 'quick-learner',
+    title: 'Quick Learner',
+    description: 'Completed 5 lessons in one day',
+    icon: 'fas fa-lightbulb',  // Changed from fa-puzzle-piece
+    isCompleted: true,
+    color: '#b8c17a',
+    progress: undefined
+  },
+  {
+    id: 'first-win',
+    title: 'First Win',
+    description: 'Complete your first win',
+    icon: 'fas fa-trophy',  // This one is correct
+    isCompleted: true,
+    color: '#cd7f7f',
+    progress: undefined
+  },
+  {
+    id: 'money-whizz',
+    title: 'Money Whizz',
+    description: 'Complete 10 quizzes',
+    icon: 'fas fa-coins',  // Changed from fa-puzzle-piece
+    isCompleted: false,
+    color: '#c4965a',
+    progress: { current: 3, total: 10 }  // Updated progress
+  },
+  {
+    id: 'game-champion',
+    title: 'Game Champion',
+    description: 'Win 5 games in a row',
+    icon: 'fas fa-gamepad',  // Changed from fa-comments
+    isCompleted: false,
+    color: '#d47f7f',
+    progress: { current: 1, total: 5 }
+  }
+];
 
   setActiveFilter(filter: string): void {
     this.activeFilter = filter;
