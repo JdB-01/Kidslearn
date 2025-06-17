@@ -1,0 +1,23 @@
+<div class="game-container">
+  <h2>Money Math Challenge</h2>
+  <div class="timer-bar-container">
+  <div class="timer-bar" [style.width.%]="timerPercentage"></div>
+</div>
+
+  <div class="score-lives">
+    <span>Score: {{ score }}</span>
+    <span>Lives: {{ lives }}</span>
+  </div>
+  <div class="level">Level {{ level }}</div>
+  <div class="question">{{ question }}</div>
+
+  <input [(ngModel)]="answer" placeholder="Your answer" />
+  <button (click)="submitAnswer()">Submit</button>
+
+  <div *ngIf="showResult" class="result">{{ resultMessage }}</div>
+
+  <div class="controls">
+    <button (click)="resetGame()">Restart Game</button>
+  </div>
+</div>
+

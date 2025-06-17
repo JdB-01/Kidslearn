@@ -1,0 +1,47 @@
+<div class="game-selection-container">
+  <header class="header">
+    <h1 class="bouncing-title">🎮 Fun Money Games! 🎮</h1>
+    <p class="subtitle">Learn about money while having fun!</p>
+  </header>
+
+  <div class="floating-icons">
+    <div class="floating-icon" (click)="onFloatingIconClick($event)">💵</div>
+    <div class="floating-icon" (click)="onFloatingIconClick($event)">🪙</div>
+    <div class="floating-icon" (click)="onFloatingIconClick($event)">💳</div>
+    <div class="floating-icon" (click)="onFloatingIconClick($event)">🏦</div>
+    <div class="floating-icon" (click)="onFloatingIconClick($event)">💎</div>
+    <div class="floating-icon" (click)="onFloatingIconClick($event)">🎯</div>
+  </div>
+
+  <div class="games-grid">
+    <div class="game-card bill-game" 
+         (click)="onGameClick('bill-identification', $event)">
+      <div class="game-icon">💵</div>
+      <h2 class="game-title">Bill Identification Game</h2>
+      <p class="game-description">
+        Learn to identify different bills and their values! 
+        Practice recognizing money and become a cash expert!
+      </p>
+      <div class="play-button">
+        <span>🎮 Let's Play!</span>
+      </div>
+    </div>
+
+    <div class="game-card math-game" 
+         (click)="onGameClick('money-math', $event)">
+      <div class="game-icon">🧮</div>
+      <h2 class="game-title">Money Math Challenge</h2>
+      <p class="game-description">
+        Solve fun math problems with money! 
+        Add, subtract, and count coins and bills like a pro!
+      </p>
+      <div class="play-button">
+        <span>🎮 Let's Play!</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>🌟 Have fun learning about money! 🌟</p>
+  </footer>
+</div>

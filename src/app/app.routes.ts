@@ -9,6 +9,8 @@ import { LearnComponent } from './components/learn/learn.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 import { SavingsComponent } from './components/savings/savings.component';
+import { MoneyMathChallengeComponent } from './components/moneymath/moneymath.component';
+import { GamesComponent } from './components/games/games.component';
 
 export const routes: Routes = [
   // Login route (no sidebar)
@@ -22,11 +24,13 @@ export const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'learn', component: LearnComponent },
-      { path: 'games', component: BillIdentificationGameComponent },
+      { path: 'games', component: GamesComponent },
+      { path: 'bill-identification', component: BillIdentificationGameComponent},
+      { path: 'money-math-challenge', component: MoneyMathChallengeComponent},
       { path: 'rewards', component: RewardspageComponent },
       { path: 'leaderboard', component: LeaderboardComponent},
       { path: 'savings', component: SavingsComponent}
-      
+          
        ]
   },
   
